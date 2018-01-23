@@ -16,7 +16,7 @@ This could be circumvented by waiting a certain period before removing a
 fragment. For example, it could be implemented to wait until half of the
 preceeding fragment is empty, before executing the pending removal.
 
-## Usage Example
+## Example Usage
 
 ```c
 #include "linked-stack.h"
@@ -74,7 +74,7 @@ int main () {
 
 ## Configuration
 
-Setting the initial stack size heavily influences the stack growth behaviour.
+Setting the initial stack size influences the stack growth behaviour. The initial value should not be too small. Crossing stack fragment boundaries is far more expensive than accessing elements within one fragment. This is especially true when auto-shrinking is enabled.
 
 ```c
 LinkedStack *stack = NewLinkedStack(INITIAL_STACK_SIZE);
